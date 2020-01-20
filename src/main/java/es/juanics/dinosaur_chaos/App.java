@@ -2,8 +2,9 @@ package es.juanics.dinosaur_chaos;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -21,11 +22,20 @@ public class App extends Application {
         // StackPane root = new StackPane();//creo un nuevo objeto de tipo StackPane llamado root
         Pane root = new Pane();
         var scene = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);//le digo a la escena el panel principal (root) y el tamaño de la pantalla
-        scene.setFill(Color.BLACK);//Le damos el color de fondo a la escena
+        // scene.setFill(Color.BLACK);//Le damos el color de fondo a la escena
         stage.setScene(scene);
         stage.setResizable(false);//Para que el usuario no pueda cambiar el tamaño de la pantalla
         stage.show();
+        
+        
+        Image background1 = new Image(getClass().getResourceAsStream("/images/swamp.png"));//Él lo ha llamado image1
+        ImageView backgroundView1 = new ImageView(background1);//Metemos la imagen de fondo en el visor
                 
+        backgroundView1.setX(0);
+        backgroundView1.setY(0);
+        
+        root.getChildren().add(backgroundView1);
+        
     }
 
     public static void main(String[] args) {
