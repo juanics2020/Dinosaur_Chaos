@@ -80,15 +80,17 @@ public class App extends Application {
                     switch(keyEvent.getCode()){//Según la tecla pulsada
                         case LEFT:
                             direction = -1; //pantalla a la izquierda
-                            backgroundView1.setX (posSig);
-                            backgroundView2.setX (posSig);
+                            posicionMomView = posicionMomView-10;
+                            backgroundView1.setX (posicionMomView);
+                            backgroundView2.setX (posicionMomView);
                             System.out.println("izq");
                             break;
  
                         case RIGHT:
                             direction = 1;//pantalla a la derecha
-                            backgroundView1.setX (posicionMomView+10);
-                            backgroundView2.setX (posicionMomView+10);
+                            posicionMomView = posicionMomView+10;
+                            backgroundView1.setX (posicionMomView);
+                            backgroundView2.setX (posicionMomView);
                             System.out.println("right");
                             break;
                             
