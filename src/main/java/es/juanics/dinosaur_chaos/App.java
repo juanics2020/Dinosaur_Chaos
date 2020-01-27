@@ -135,27 +135,34 @@ public class App extends Application {
                     switch (i){
                         case 1:
                             dinosaurView1 = new ImageView(dinosaur1);//meter la imagen dinosaurio en view                           
+                            i++;
                         case 2:
                             dinosaurView1 = new ImageView(dinosaur2);//meter la imagen dinosaurio en view
+                            i++;
                         case 3:
                             dinosaurView1 = new ImageView(dinosaur3);//meter la imagen dinosaurio en view           
+                            i++;
                         case 4:
                             dinosaurView1 = new ImageView(dinosaur4);//meter la imagen dinosaurio en view           
+                            i++;
                         case 5:
                             dinosaurView1 = new ImageView(dinosaur5);//meter la imagen dinosaurio en view                               
                         case 6:
                             dinosaurView1 = new ImageView(dinosaur6);//meter la imagen dinosaurio en view                                    
+                            i++;
                         case 7:
                             dinosaurView1 = new ImageView(dinosaur7);//meter la imagen dinosaurio en view                                    
                         case 8:
                             dinosaurView1 = new ImageView(dinosaur8);//meter la imagen dinosaurio en view                                       
+                            i++;
                         case 9:
                             dinosaurView1 = new ImageView(dinosaur9);//meter la imagen dinosaurio en view                                                               
+                            i++;
                         case 10:
                             dinosaurView1 = new ImageView(dinosaur10);//meter la imagen dinosaurio en view                                           
-                            
+                            i = 0; 
                     }
-                    i++;
+                    
                     
                     /*
                     //idle();//la imagen del dinosaurio irá cambiando
