@@ -152,7 +152,6 @@ public class App extends Application {
     Image[] dinosaurDi = new Image[8];
 
     
-    
  //---   
     ImageView dinosaurView1 = new ImageView(dinosaur1);//meter la imagen dinosaurio en view
  //---    
@@ -166,34 +165,34 @@ public class App extends Application {
     double posicionMomView1 = 0;//Guardará la posición que tenga la pantalla el visor 1
     double posicionMomView2 = 0;//Guardará la posición que tenga la pantalla el visor 2
     double dinoDeSobra = dinosaur1.getWidth()/3;//Imagen que sobra por los laterales cuando gira el dino (habrá que sumar o restar cuando gira)
-    
+    int contPasos = 0;//Para que cuente los pasos, que cambie la imagen   
     
     @Override
     public void start(Stage stage) {
         //CARGA DE IMÁGENES USANDO UN VECTOR (ARRAY) UNIDIMENSIONAL
-        for (int i=0; i<10; i++){
-            dinosaurWd[i] = new Image(getClass().getResourceAsStream("/images/Walk ("+(i+1)+").png"));
+        for (int c=0; c<10; c++){
+            dinosaurWd[c] = new Image(getClass().getResourceAsStream("/images/Walk ("+(c+1)+").png"));
         }
-        for (int i=0; i<10; i++){
-            dinosaurWi[i] = new Image(getClass().getResourceAsStream("/images/Walkiz ("+(i+1)+").png"));
+        for (int c=0; c<10; c++){
+            dinosaurWi[c] = new Image(getClass().getResourceAsStream("/images/Walkiz ("+(c+1)+").png"));
         } 
-        for (int i=0; i<8; i++){
-            dinosaurRd[i] = new Image(getClass().getResourceAsStream("/images/Run ("+(i+1)+").png"));
+        for (int c=0; c<8; c++){
+            dinosaurRd[c] = new Image(getClass().getResourceAsStream("/images/Run ("+(c+1)+").png"));
         }        
-        for (int i=0; i<8; i++){
-            dinosaurRi[i] = new Image(getClass().getResourceAsStream("/images/Runiz ("+(i+1)+").png"));
+        for (int c=0; c<8; c++){
+            dinosaurRi[c] = new Image(getClass().getResourceAsStream("/images/Runiz ("+(c+1)+").png"));
         }        
-        for (int i=0; i<12; i++){
-            dinosaurJd[i] = new Image(getClass().getResourceAsStream("/images/Jump ("+(i+1)+").png"));
+        for (int c=0; c<12; c++){
+            dinosaurJd[c] = new Image(getClass().getResourceAsStream("/images/Jump ("+(c+1)+").png"));
         }       
-        for (int i=0; i<12; i++){
-            dinosaurJi[i] = new Image(getClass().getResourceAsStream("/images/Jumpiz ("+(i+1)+").png"));
+        for (int c=0; c<12; c++){
+            dinosaurJi[c] = new Image(getClass().getResourceAsStream("/images/Jumpiz ("+(c+1)+").png"));
         }        
-        for (int i=0; i<8; i++){
-            dinosaurDd[i] = new Image(getClass().getResourceAsStream("/images/Dead ("+(i+1)+").png"));
+        for (int c=0; c<8; c++){
+            dinosaurDd[c] = new Image(getClass().getResourceAsStream("/images/Dead ("+(c+1)+").png"));
         }
-        for (int i=0; i<8; i++){
-            dinosaurDi[i] = new Image(getClass().getResourceAsStream("/images/Deadiz ("+(i+1)+").png"));
+        for (int c=0; c<8; c++){
+            dinosaurDi[c] = new Image(getClass().getResourceAsStream("/images/Deadiz ("+(c+1)+").png"));
         } 
         
         
@@ -245,31 +244,43 @@ public class App extends Application {
                 posicionMomView1 = backgroundView1.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen
                 posicionMomView2 = backgroundView2.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen          
                 double limite = ((SCENE_WIDTH/2)-dinosaurView1.getFitWidth());//Límite a donde llega el dinosaurio y comienza scroll
-                int contPasos = 0;//Para que cuente los pasos, que cambie la imagen
-                
-                
+               
                 switch(keyEvent.getCode()){//Según la tecla pulsada
                     case LEFT:// el dinosaurio se moverá a la izquierda
-                        if (direction == 1){
-                            dinosaurView1.setX(dinosaurView1.getX()-dinoDeSobra);
+                        if (direction == 1){//hay que cambiar dirección
+                            dinosaurView1.setX(dinosaurView1.getX()-dinoDeSobra);//cuando cambia la dirección hay que mover el dinosaruio el trozo de imagen que le sobra para que caiga encima
                             direction = -1; //pantalla a la izquierda
+                            contPasos = 0;//Cuando cambie de dirección los pasos a 0
                         }
+                        if(contPasos<=5){//Si los pasos son menos de 5 ANDARÁ, si son más correrá
+                            dinosaurView1.setImage(dinosaurWi[contPasos]);  
+                        }else{//Si es mayor de 5 correrá
+                            dinosaurView1.setImage(dinosaurRi[contPasos]);
+                        }
+                        
                         i = 11;//cambair contador imagen IDLE izquierda
                         if (dinosaurView1.getX()>(dinoDeSobra*-1)){// para que no pase del lado izquierdo (como la imagen es larga tiene que salir un poco por la izquierda
                             dinosaurView1.setX ((dinosaurView1.getX())-8);
                         }
+                        contPasos++;
                         break;
 
                     case RIGHT: //el fondo se moverá a la izquierda
-                        if (direction == -1){
-                            dinosaurView1.setX(dinosaurView1.getX()+dinoDeSobra);
+                        if (direction == -1){//hay que cambiar dirección
+                            dinosaurView1.setX(dinosaurView1.getX()+dinoDeSobra);//cuando cambia la dirección hay que mover el dinosaruio el trozo de imagen que le sobra para que caiga encima
                             direction = 1; //pantalla a la izquierda
+                            contPasos = 0;// cuando cambie de dirección los pasos a 0
                         }
-                        
+                        if(contPasos<=5){//Si los pasos son menos de 5 ANDARÁ, si son más correrá
+                            dinosaurView1.setImage(dinosaurWd[contPasos]);                              
+                        }else{//Si es mayor de 5 correrá
+                            dinosaurView1.setImage(dinosaurRd[contPasos]);
+                        }
+                        posicionMomView1 = posicionMomView1-8;
+                        posicionMomView2 = posicionMomView2-8;                        
+
                         direction = 1;//pantalla a la derecha
-                         i = 1;//cambiar contador imagen IDLE
-                        posicionMomView1 = posicionMomView1-5;
-                        posicionMomView2 = posicionMomView2-5;
+                        i = 1;//cambiar contador imagen IDLE
                         if (dinosaurView1.getX()>limite){
                             if (posicionMomView2>0){
                                 backgroundView1.setX (posicionMomView1);
@@ -281,6 +292,7 @@ public class App extends Application {
                         }else{
                             dinosaurView1.setX ((dinosaurView1.getX())+8);                               
                         }
+                        contPasos++;
                         break;
 
                     case UP:
