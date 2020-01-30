@@ -44,91 +44,115 @@ public class App extends Application {
     Image dinosaur18 = new Image(getClass().getResourceAsStream("/images/Idleiz (8).png"));
     Image dinosaur19 = new Image(getClass().getResourceAsStream("/images/Idleiz (9).png"));
     Image dinosaur20 = new Image(getClass().getResourceAsStream("/images/Idleiz (10).png"));
+
+    //Idle dejamos la carga de imágenes aquí porque es automático en TimeLine
+
 //WALK
-    Image dinosaurWd1 = new Image(getClass().getResourceAsStream("/images/Walk (1).png"));
-    Image dinosaurWd2 = new Image(getClass().getResourceAsStream("/images/Walk (2).png"));
-    Image dinosaurWd3 = new Image(getClass().getResourceAsStream("/images/Walk (3).png"));
-    Image dinosaurWd4 = new Image(getClass().getResourceAsStream("/images/Walk (4).png"));
-    Image dinosaurWd5 = new Image(getClass().getResourceAsStream("/images/Walk (5).png"));
-    Image dinosaurWd6 = new Image(getClass().getResourceAsStream("/images/Walk (6).png"));
-    Image dinosaurWd7 = new Image(getClass().getResourceAsStream("/images/Walk (7).png"));    
-    Image dinosaurWd8 = new Image(getClass().getResourceAsStream("/images/Walk (8).png"));
-    Image dinosaurWd9 = new Image(getClass().getResourceAsStream("/images/Walk (9).png"));
-    Image dinosaurWd10 = new Image(getClass().getResourceAsStream("/images/Walk (10).png"));
-     
-    Image dinosaurWi1 = new Image(getClass().getResourceAsStream("/images/Walkiz (1).png"));
-    Image dinosaurWi2 = new Image(getClass().getResourceAsStream("/images/Walkiz (2).png"));
-    Image dinosaurWi3 = new Image(getClass().getResourceAsStream("/images/Walkiz (3).png"));
-    Image dinosaurWi4 = new Image(getClass().getResourceAsStream("/images/Walkiz (4).png"));
-    Image dinosaurWi5 = new Image(getClass().getResourceAsStream("/images/Walkiz (5).png"));
-    Image dinosaurWi6 = new Image(getClass().getResourceAsStream("/images/Walkiz (6).png"));
-    Image dinosaurWi7 = new Image(getClass().getResourceAsStream("/images/Walkiz (7).png"));    
-    Image dinosaurWi8 = new Image(getClass().getResourceAsStream("/images/Walkiz (8).png"));
-    Image dinosaurWi9 = new Image(getClass().getResourceAsStream("/images/Walkiz (9).png"));
-    Image dinosaurWi10 = new Image(getClass().getResourceAsStream("/images/Walkiz (10).png"));
+    //Image dinosaurWd1 = new Image(getClass().getResourceAsStream("/images/Walk (1).png"));
+    //Image dinosaurWd2 = new Image(getClass().getResourceAsStream("/images/Walk (2).png"));
+    //Image dinosaurWd3 = new Image(getClass().getResourceAsStream("/images/Walk (3).png"));
+    //Image dinosaurWd4 = new Image(getClass().getResourceAsStream("/images/Walk (4).png"));
+    //Image dinosaurWd5 = new Image(getClass().getResourceAsStream("/images/Walk (5).png"));
+    //Image dinosaurWd6 = new Image(getClass().getResourceAsStream("/images/Walk (6).png"));
+    //Image dinosaurWd7 = new Image(getClass().getResourceAsStream("/images/Walk (7).png"));    
+    //Image dinosaurWd8 = new Image(getClass().getResourceAsStream("/images/Walk (8).png"));
+    //Image dinosaurWd9 = new Image(getClass().getResourceAsStream("/images/Walk (9).png"));
+    //Image dinosaurWd10 = new Image(getClass().getResourceAsStream("/images/Walk (10).png"));
+
+    Image[] dinosaurWd = new Image[10];    
+    
+    //Image dinosaurWi1 = new Image(getClass().getResourceAsStream("/images/Walkiz (1).png"));
+    //Image dinosaurWi2 = new Image(getClass().getResourceAsStream("/images/Walkiz (2).png"));
+    //Image dinosaurWi3 = new Image(getClass().getResourceAsStream("/images/Walkiz (3).png"));
+    //Image dinosaurWi4 = new Image(getClass().getResourceAsStream("/images/Walkiz (4).png"));
+    //Image dinosaurWi5 = new Image(getClass().getResourceAsStream("/images/Walkiz (5).png"));
+    //Image dinosaurWi6 = new Image(getClass().getResourceAsStream("/images/Walkiz (6).png"));
+    //Image dinosaurWi7 = new Image(getClass().getResourceAsStream("/images/Walkiz (7).png"));    
+    //Image dinosaurWi8 = new Image(getClass().getResourceAsStream("/images/Walkiz (8).png"));
+    //Image dinosaurWi9 = new Image(getClass().getResourceAsStream("/images/Walkiz (9).png"));
+    //Image dinosaurWi10 = new Image(getClass().getResourceAsStream("/images/Walkiz (10).png"));
+
+    Image[] dinosaurWi = new Image[10];
+
 //RUN
-    Image dinosaurRd1 = new Image(getClass().getResourceAsStream("/images/Run (1).png"));
-    Image dinosaurRd2 = new Image(getClass().getResourceAsStream("/images/Run (2).png"));
-    Image dinosaurRd3 = new Image(getClass().getResourceAsStream("/images/Run (3).png"));
-    Image dinosaurRd4 = new Image(getClass().getResourceAsStream("/images/Run (4).png"));
-    Image dinosaurRd5 = new Image(getClass().getResourceAsStream("/images/Run (5).png"));
-    Image dinosaurRd6 = new Image(getClass().getResourceAsStream("/images/Run (6).png"));
-    Image dinosaurRd7 = new Image(getClass().getResourceAsStream("/images/Run (7).png"));    
-    Image dinosaurRd8 = new Image(getClass().getResourceAsStream("/images/Run (8).png"));
+    //Image dinosaurRd1 = new Image(getClass().getResourceAsStream("/images/Run (1).png"));
+    //Image dinosaurRd2 = new Image(getClass().getResourceAsStream("/images/Run (2).png"));
+    //Image dinosaurRd3 = new Image(getClass().getResourceAsStream("/images/Run (3).png"));
+    //Image dinosaurRd4 = new Image(getClass().getResourceAsStream("/images/Run (4).png"));
+    //Image dinosaurRd5 = new Image(getClass().getResourceAsStream("/images/Run (5).png"));
+    //Image dinosaurRd6 = new Image(getClass().getResourceAsStream("/images/Run (6).png"));
+    //Image dinosaurRd7 = new Image(getClass().getResourceAsStream("/images/Run (7).png"));    
+    //Image dinosaurRd8 = new Image(getClass().getResourceAsStream("/images/Run (8).png"));
 
-    Image dinosaurRi1 = new Image(getClass().getResourceAsStream("/images/Runiz (1).png"));
-    Image dinosaurRi2 = new Image(getClass().getResourceAsStream("/images/Runiz (2).png"));
-    Image dinosaurRi3 = new Image(getClass().getResourceAsStream("/images/Runiz (3).png"));
-    Image dinosaurRi4 = new Image(getClass().getResourceAsStream("/images/Runiz (4).png"));
-    Image dinosaurRi5 = new Image(getClass().getResourceAsStream("/images/Runiz (5).png"));
-    Image dinosaurRi6 = new Image(getClass().getResourceAsStream("/images/Runiz (6).png"));
-    Image dinosaurRi7 = new Image(getClass().getResourceAsStream("/images/Runiz (7).png"));    
-    Image dinosaurRi8 = new Image(getClass().getResourceAsStream("/images/Runiz (8).png"));
+    Image[] dinosaurRd = new Image[8];   
+    
+    //Image dinosaurRi1 = new Image(getClass().getResourceAsStream("/images/Runiz (1).png"));
+    //Image dinosaurRi2 = new Image(getClass().getResourceAsStream("/images/Runiz (2).png"));
+    //Image dinosaurRi3 = new Image(getClass().getResourceAsStream("/images/Runiz (3).png"));
+    //Image dinosaurRi4 = new Image(getClass().getResourceAsStream("/images/Runiz (4).png"));
+    //Image dinosaurRi5 = new Image(getClass().getResourceAsStream("/images/Runiz (5).png"));
+    //Image dinosaurRi6 = new Image(getClass().getResourceAsStream("/images/Runiz (6).png"));
+    //Image dinosaurRi7 = new Image(getClass().getResourceAsStream("/images/Runiz (7).png"));    
+    //Image dinosaurRi8 = new Image(getClass().getResourceAsStream("/images/Runiz (8).png"));
+
+    Image[] dinosaurRi = new Image[8];
+    
 //JUMP
-    Image dinosaurJd1 = new Image(getClass().getResourceAsStream("/images/Jump (1).png"));
-    Image dinosaurJd2 = new Image(getClass().getResourceAsStream("/images/Jump (2).png"));
-    Image dinosaurJd3 = new Image(getClass().getResourceAsStream("/images/Jump (3).png"));
-    Image dinosaurJd4 = new Image(getClass().getResourceAsStream("/images/Jump (4).png"));
-    Image dinosaurJd5 = new Image(getClass().getResourceAsStream("/images/Jump (5).png"));
-    Image dinosaurJd6 = new Image(getClass().getResourceAsStream("/images/Jump (6).png"));
-    Image dinosaurJd7 = new Image(getClass().getResourceAsStream("/images/Jump (7).png"));    
-    Image dinosaurJd8 = new Image(getClass().getResourceAsStream("/images/Jump (8).png"));
-    Image dinosaurJd9 = new Image(getClass().getResourceAsStream("/images/Jump (9).png"));
-    Image dinosaurJd10 = new Image(getClass().getResourceAsStream("/images/Jump (10).png"));
-    Image dinosaurJd11 = new Image(getClass().getResourceAsStream("/images/Jump (11).png"));
-    Image dinosaurJd12 = new Image(getClass().getResourceAsStream("/images/Jump (12).png"));
-
-    Image dinosaurJi1 = new Image(getClass().getResourceAsStream("/images/Jumpiz (1).png"));
-    Image dinosaurJi2 = new Image(getClass().getResourceAsStream("/images/Jumpiz (2).png"));
-    Image dinosaurJi3 = new Image(getClass().getResourceAsStream("/images/Jumpiz (3).png"));
-    Image dinosaurJi4 = new Image(getClass().getResourceAsStream("/images/Jumpiz (4).png"));
-    Image dinosaurJi5 = new Image(getClass().getResourceAsStream("/images/Jumpiz (5).png"));
-    Image dinosaurJi6 = new Image(getClass().getResourceAsStream("/images/Jumpiz (6).png"));
-    Image dinosaurJi7 = new Image(getClass().getResourceAsStream("/images/Jumpiz (7).png"));    
-    Image dinosaurJi8 = new Image(getClass().getResourceAsStream("/images/Jumpiz (8).png"));
-    Image dinosaurJi9 = new Image(getClass().getResourceAsStream("/images/Jumpiz (9).png"));
-    Image dinosaurJi10 = new Image(getClass().getResourceAsStream("/images/Jumpiz (10).png"));
-    Image dinosaurJi11 = new Image(getClass().getResourceAsStream("/images/Jumpiz (11).png"));
-    Image dinosaurJi12 = new Image(getClass().getResourceAsStream("/images/Jumpiz (12).png"));
+    //Image dinosaurJd1 = new Image(getClass().getResourceAsStream("/images/Jump (1).png"));
+    //Image dinosaurJd2 = new Image(getClass().getResourceAsStream("/images/Jump (2).png"));
+    //Image dinosaurJd3 = new Image(getClass().getResourceAsStream("/images/Jump (3).png"));
+    //Image dinosaurJd4 = new Image(getClass().getResourceAsStream("/images/Jump (4).png"));
+    //Image dinosaurJd5 = new Image(getClass().getResourceAsStream("/images/Jump (5).png"));
+    //Image dinosaurJd6 = new Image(getClass().getResourceAsStream("/images/Jump (6).png"));
+    //Image dinosaurJd7 = new Image(getClass().getResourceAsStream("/images/Jump (7).png"));    
+    //Image dinosaurJd8 = new Image(getClass().getResourceAsStream("/images/Jump (8).png"));
+    //Image dinosaurJd9 = new Image(getClass().getResourceAsStream("/images/Jump (9).png"));
+    //Image dinosaurJd10 = new Image(getClass().getResourceAsStream("/images/Jump (10).png"));
+    //Image dinosaurJd11 = new Image(getClass().getResourceAsStream("/images/Jump (11).png"));
+    //Image dinosaurJd12 = new Image(getClass().getResourceAsStream("/images/Jump (12).png"));
+    
+    Image[] dinosaurJd = new Image[12];
+    
+    //Image dinosaurJi1 = new Image(getClass().getResourceAsStream("/images/Jumpiz (1).png"));
+    //Image dinosaurJi2 = new Image(getClass().getResourceAsStream("/images/Jumpiz (2).png"));
+    //Image dinosaurJi3 = new Image(getClass().getResourceAsStream("/images/Jumpiz (3).png"));
+    //Image dinosaurJi4 = new Image(getClass().getResourceAsStream("/images/Jumpiz (4).png"));
+    //Image dinosaurJi5 = new Image(getClass().getResourceAsStream("/images/Jumpiz (5).png"));
+    //Image dinosaurJi6 = new Image(getClass().getResourceAsStream("/images/Jumpiz (6).png"));
+    //Image dinosaurJi7 = new Image(getClass().getResourceAsStream("/images/Jumpiz (7).png"));    
+    //Image dinosaurJi8 = new Image(getClass().getResourceAsStream("/images/Jumpiz (8).png"));
+    //Image dinosaurJi9 = new Image(getClass().getResourceAsStream("/images/Jumpiz (9).png"));
+    //Image dinosaurJi10 = new Image(getClass().getResourceAsStream("/images/Jumpiz (10).png"));
+    //Image dinosaurJi11 = new Image(getClass().getResourceAsStream("/images/Jumpiz (11).png"));
+    //Image dinosaurJi12 = new Image(getClass().getResourceAsStream("/images/Jumpiz (12).png"));
+    
+    Image[] dinosaurJi = new Image[12];
+    
 //DEAD
-    Image dinosaurDd1 = new Image(getClass().getResourceAsStream("/images/Dead (1).png"));
-    Image dinosaurDd2 = new Image(getClass().getResourceAsStream("/images/Dead (2).png"));
-    Image dinosaurDd3 = new Image(getClass().getResourceAsStream("/images/Dead (3).png"));
-    Image dinosaurDd4 = new Image(getClass().getResourceAsStream("/images/Dead (4).png"));
-    Image dinosaurDd5 = new Image(getClass().getResourceAsStream("/images/Dead (5).png"));
-    Image dinosaurDd6 = new Image(getClass().getResourceAsStream("/images/Dead (6).png"));
-    Image dinosaurDd7 = new Image(getClass().getResourceAsStream("/images/Dead (7).png"));    
-    Image dinosaurDd8 = new Image(getClass().getResourceAsStream("/images/Dead (8).png"));
+    //Image dinosaurDd1 = new Image(getClass().getResourceAsStream("/images/Dead (1).png"));
+    //Image dinosaurDd2 = new Image(getClass().getResourceAsStream("/images/Dead (2).png"));
+    //Image dinosaurDd3 = new Image(getClass().getResourceAsStream("/images/Dead (3).png"));
+    //Image dinosaurDd4 = new Image(getClass().getResourceAsStream("/images/Dead (4).png"));
+    //Image dinosaurDd5 = new Image(getClass().getResourceAsStream("/images/Dead (5).png"));
+    //Image dinosaurDd6 = new Image(getClass().getResourceAsStream("/images/Dead (6).png"));
+    //Image dinosaurDd7 = new Image(getClass().getResourceAsStream("/images/Dead (7).png"));    
+    //Image dinosaurDd8 = new Image(getClass().getResourceAsStream("/images/Dead (8).png"));
 
-    Image dinosaurDi1 = new Image(getClass().getResourceAsStream("/images/Deadiz (1).png"));
-    Image dinosaurDi2 = new Image(getClass().getResourceAsStream("/images/Deadiz (2).png"));
-    Image dinosaurDi3 = new Image(getClass().getResourceAsStream("/images/Deadiz (3).png"));
-    Image dinosaurDi4 = new Image(getClass().getResourceAsStream("/images/Deadiz (4).png"));
-    Image dinosaurDi5 = new Image(getClass().getResourceAsStream("/images/Deadiz (5).png"));
-    Image dinosaurDi6 = new Image(getClass().getResourceAsStream("/images/Deadiz (6).png"));
-    Image dinosaurDi7 = new Image(getClass().getResourceAsStream("/images/Deadiz (7).png"));    
-    Image dinosaurDi8 = new Image(getClass().getResourceAsStream("/images/Deadiz (8).png"));
+    Image[] dinosaurDd = new Image[8];
+        
+    //Image dinosaurDi1 = new Image(getClass().getResourceAsStream("/images/Deadiz (1).png"));
+    //Image dinosaurDi2 = new Image(getClass().getResourceAsStream("/images/Deadiz (2).png"));
+    //Image dinosaurDi3 = new Image(getClass().getResourceAsStream("/images/Deadiz (3).png"));
+    //Image dinosaurDi4 = new Image(getClass().getResourceAsStream("/images/Deadiz (4).png"));
+    //Image dinosaurDi5 = new Image(getClass().getResourceAsStream("/images/Deadiz (5).png"));
+    //Image dinosaurDi6 = new Image(getClass().getResourceAsStream("/images/Deadiz (6).png"));
+    //Image dinosaurDi7 = new Image(getClass().getResourceAsStream("/images/Deadiz (7).png"));    
+    //Image dinosaurDi8 = new Image(getClass().getResourceAsStream("/images/Deadiz (8).png"));
 
+    Image[] dinosaurDi = new Image[8];
+
+    
+    
  //---   
     ImageView dinosaurView1 = new ImageView(dinosaur1);//meter la imagen dinosaurio en view
  //---    
@@ -146,6 +170,36 @@ public class App extends Application {
     
     @Override
     public void start(Stage stage) {
+        //CARGA DE IMÁGENES USANDO UN VECTOR (ARRAY) UNIDIMENSIONAL
+        for (int i=0; i<10; i++){
+            dinosaurWd[i] = new Image(getClass().getResourceAsStream("/images/Walk ("+(i+1)+").png"));
+        }
+        for (int i=0; i<10; i++){
+            dinosaurWi[i] = new Image(getClass().getResourceAsStream("/images/Walkiz ("+(i+1)+").png"));
+        } 
+        for (int i=0; i<8; i++){
+            dinosaurRd[i] = new Image(getClass().getResourceAsStream("/images/Run ("+(i+1)+").png"));
+        }        
+        for (int i=0; i<8; i++){
+            dinosaurRi[i] = new Image(getClass().getResourceAsStream("/images/Runiz ("+(i+1)+").png"));
+        }        
+        for (int i=0; i<12; i++){
+            dinosaurJd[i] = new Image(getClass().getResourceAsStream("/images/Jump ("+(i+1)+").png"));
+        }       
+        for (int i=0; i<12; i++){
+            dinosaurJi[i] = new Image(getClass().getResourceAsStream("/images/Jumpiz ("+(i+1)+").png"));
+        }        
+        for (int i=0; i<8; i++){
+            dinosaurDd[i] = new Image(getClass().getResourceAsStream("/images/Dead ("+(i+1)+").png"));
+        }
+        for (int i=0; i<8; i++){
+            dinosaurDi[i] = new Image(getClass().getResourceAsStream("/images/Deadiz ("+(i+1)+").png"));
+        } 
+        
+        
+        //dinosaurDi[1] = new Image(getClass().getResourceAsStream("/images/Deadiz (2).png"));
+        //dinosaurDi[2] = new Image(getClass().getResourceAsStream("/images/Deadiz (3).png"));
+
         //StackPane (apila una cosa encima de otra en el panel. Así que no nos sirve, porque se pisan
         // StackPane root = new StackPane();//creo un nuevo objeto de tipo StackPane llamado root
         Pane root = new Pane();
@@ -191,7 +245,9 @@ public class App extends Application {
                 posicionMomView1 = backgroundView1.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen
                 posicionMomView2 = backgroundView2.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen          
                 double limite = ((SCENE_WIDTH/2)-dinosaurView1.getFitWidth());//Límite a donde llega el dinosaurio y comienza scroll
-
+                int contPasos = 0;//Para que cuente los pasos, que cambie la imagen
+                
+                
                 switch(keyEvent.getCode()){//Según la tecla pulsada
                     case LEFT:// el dinosaurio se moverá a la izquierda
                         if (direction == 1){
