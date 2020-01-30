@@ -141,6 +141,8 @@ public class App extends Application {
     short direction = 1; //1 ->der, -1 ->izq, 0 ->pantalla parada
     double posicionMomView1 = 0;//Guardará la posición que tenga la pantalla el visor 1
     double posicionMomView2 = 0;//Guardará la posición que tenga la pantalla el visor 2
+    double dinoDeSobra = dinosaur1.getWidth()/3;//Imagen que sobra por los laterales cuando gira el dino (habrá que sumar o restar cuando gira)
+    
     
     @Override
     public void start(Stage stage) {
@@ -177,8 +179,8 @@ public class App extends Application {
           
         
         //PONER EL DINOSAURIO
-        dinosaurView1.setX((SCENE_WIDTH/2)-(TAMAÑO_DINO*4));//posición x del dinosaurio
-        dinosaurView1.setY(SCENE_HEIGHT-(SCENE_HEIGHT/3));//posición y del dinosaurio
+        dinosaurView1.setX((SCENE_WIDTH/2)-dinosaurView1.getFitWidth());//posición x del dinosaurio
+        dinosaurView1.setY(SCENE_HEIGHT-(SCENE_HEIGHT/4));//posición y del dinosaurio
         //dinosaurView1.setFitHeight ((SCENE_HEIGHT*TAMAÑO_DINO)/100);//El dinosario será el 15% de la pantalla
         //dinosaurView1.setFitWidth ((SCENE_WIDTH*TAMAÑO_DINO)/100);         
         root.getChildren().add(dinosaurView1);
@@ -188,22 +190,30 @@ public class App extends Application {
             public void handle(final KeyEvent keyEvent){
                 posicionMomView1 = backgroundView1.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen
                 posicionMomView2 = backgroundView2.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen          
-                double limite = (SCENE_WIDTH/2)-(TAMAÑO_DINO*2);//Límite a donde llega el dinosaurio y comienza scroll
+                double limite = ((SCENE_WIDTH/2)-dinosaurView1.getFitWidth());//Límite a donde llega el dinosaurio y comienza scroll
 
                 switch(keyEvent.getCode()){//Según la tecla pulsada
                     case LEFT:// el dinosaurio se moverá a la izquierda
-                        direction = -1; //pantalla a la izquierda
+                        if (direction == 1){
+                            dinosaurView1.setX(dinosaurView1.getX()-dinoDeSobra);
+                            direction = -1; //pantalla a la izquierda
+                        }
                         i = 11;//cambair contador imagen IDLE izquierda
-                        if (dinosaurView1.getX()>0){
+                        if (dinosaurView1.getX()>(dinoDeSobra*-1)){// para que no pase del lado izquierdo (como la imagen es larga tiene que salir un poco por la izquierda
                             dinosaurView1.setX ((dinosaurView1.getX())-8);
                         }
                         break;
 
                     case RIGHT: //el fondo se moverá a la izquierda
+                        if (direction == -1){
+                            dinosaurView1.setX(dinosaurView1.getX()+dinoDeSobra);
+                            direction = 1; //pantalla a la izquierda
+                        }
+                        
                         direction = 1;//pantalla a la derecha
                          i = 1;//cambiar contador imagen IDLE
-                        posicionMomView1 = posicionMomView1-8;
-                        posicionMomView2 = posicionMomView2-8;
+                        posicionMomView1 = posicionMomView1-5;
+                        posicionMomView2 = posicionMomView2-5;
                         if (dinosaurView1.getX()>limite){
                             if (posicionMomView2>0){
                                 backgroundView1.setX (posicionMomView1);
