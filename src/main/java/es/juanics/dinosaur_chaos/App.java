@@ -252,118 +252,10 @@ public class App extends Application {
         //dinosaurView1.setFitHeight ((SCENE_HEIGHT*TAMAÑO_DINO)/100);//El dinosario será el 15% de la pantalla
         //dinosaurView1.setFitWidth ((SCENE_WIDTH*TAMAÑO_DINO)/100);         
         root.getChildren().add(dinosaurView1);
-                
-        //
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>(){//Llama al método setOnKeyPressed. Cuando detecte que se pulsa una tecla en la escena (se puede hacer que en vez que en la escena se detecte cuando pulse dentro de un campo de texto)
-            public void handle(final KeyEvent keyEvent){
-                
-                posicionMomView1 = backgroundView1.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen
-                posicionMomView2 = backgroundView2.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen          
-                double limite = ((SCENE_WIDTH/2)-dinosaurView1.getFitWidth());//Límite a donde llega el dinosaurio y comienza scroll
-
-                System.out.println("contPasos: "+contPasos);
-                System.out.println("contPasos/10: "+(contPasos/10));
-                switch(keyEvent.getCode()){//Según la tecla pulsada
-                    case LEFT:// el dinosaurio se moverá a la izquierda
-                        if (direction == 1){
-                            dinosaurView1.setX(dinosaurView1.getX()-dinoDeSobra);
-                            direction = -1; //pantalla a la izquierda
-                        }
-                        i = 11;//cambair contador imagen IDLE izquierda
-                        if (dinosaurView1.getX()>(dinoDeSobra*-1)){// para que no pase del lado izquierdo (como la imagen es larga tiene que salir un poco por la izquierda
-                            if (contPasos>=(7*10)){
-                                contPasos=0;
-                            }else{
-                                contPasos++;                               
-                            }
-                            dinosaurView1.setX ((dinosaurView1.getX())-8);
-                            dinosaurView1.setImage(dinosaurRi[(contPasos/10)]);
-                        }
-                        break;
-
-                    case RIGHT: //el fondo se moverá a la izquierda
-                        if (direction == -1){
-                            dinosaurView1.setX(dinosaurView1.getX()+dinoDeSobra);
-                            direction = 1; //pantalla a la izquierda
-                        }
-                        
-                        direction = 1;//pantalla a la derecha
-                         i = 1;//cambiar contador imagen IDLE
-                        posicionMomView1 = posicionMomView1-8;
-                        posicionMomView2 = posicionMomView2-8;
-                        if (dinosaurView1.getX()>limite){
-                            if (posicionMomView2>0){
-                                backgroundView1.setX (posicionMomView1);
-                                backgroundView2.setX (posicionMomView2);
-                            }else{
-                                backgroundView1.setX (0);
-                                backgroundView2.setX (SCENE_WIDTH);                                
-                            }
-                            if (contPasos>=(7*10)){
-                                contPasos=0;
-                            }else{
-                                contPasos++;                               
-                            }
-                            dinosaurView1.setImage(dinosaurRd[(contPasos/10)]);                            
-                        }else{
-                            if (contPasos>=(7*10)){
-                                contPasos=0;
-                            }else{
-                                contPasos++;                               
-                            }
-                            dinosaurView1.setX ((dinosaurView1.getX())+8);
-                            dinosaurView1.setImage(dinosaurRd[(contPasos/10)]);
-                        }
-                        break;
-
-                    case UP:
-                        contJump=0;//para que pueda mostrar los dinosaurios en timeline                   
-                        //TIMELINE -JUMP
-                        // Game loop usando Timeline
-                        Timeline timelineJump = new Timeline(//Sirve para lo que lo que metamos aquí. Podemos utilizar varios TimeLine con diferentes velocidades para diferentes cosas
-                            // 0.017 ~= 60 FPS (equivalencia de segundos a Frames por Segundo)
-                            new KeyFrame(Duration.seconds(0.08), new EventHandler<ActionEvent>() {
-                                public void handle(ActionEvent ae) {//Sólo puede haber un handle en el timeline
-
-                                    
-                                //HACER SALTO
-                                    System.out.println("contJump: " +contJump);
-                                    System.out.println("dinosarioY: " +dinosaurioY);
-
-                                    
-                                    if (contJump<15){
-                                        if (direction==-1){//salto a la izq
-                                            dinosaurView1.setImage(dinosaurJi[contJump]);
-                                            dinosaurView1.setX((dinosaurView1.getX()-30));
-                                            if (dinosaurView1.getY() > (alturaJump-dinosaurioY)){//dinosaurView1.getY()
-                                                dinosaurView1.setY((dinosaurView1.getY()-30));                                    
-                                            }else{
-                                                dinosaurView1.setY((dinosaurView1.getY()+30));                                      
-                                            }
-                                        }else{//salto a la der
-                                            dinosaurView1.setImage(dinosaurJd[contJump]);
-                                            dinosaurView1.setX((dinosaurView1.getX()+30));
-                                            if (dinosaurView1.getY() > (alturaJump-dinosaurioY)){//dinosaurView1.getY()
-                                                dinosaurView1.setY((dinosaurView1.getY()-30));                                    
-                                            }else{
-                                                dinosaurView1.setY((dinosaurView1.getY()+30));                                      
-                                            }                                
-                                        }
-                                    }
-                                    contJump++; 
-                                }
-                            })
-                        );
-
-                        timelineJump.setCycleCount(15);//Llama al método setCycleCount (para que la animación siga indefinidamente)
-                        timelineJump.play(); //Llama al método Play para echar a andar la animación
-                        //direction = 0;//pantalla parada                     
-                        break;
-
-                }
-
-            }
-        });                
+    
+        
+        
+        
         //
         //TIMELINE -IDLE
         // Game loop usando Timeline
@@ -447,7 +339,129 @@ public class App extends Application {
         );
         timelineIdle.setCycleCount(Timeline.INDEFINITE);//Llama al método setCycleCount (para que la animación siga indefinidamente
         timelineIdle.play(); //Llama al método Play para echar a andar la animación
-           
+                
+        
+        
+        
+        
+        //
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>(){//Llama al método setOnKeyPressed. Cuando detecte que se pulsa una tecla en la escena (se puede hacer que en vez que en la escena se detecte cuando pulse dentro de un campo de texto)
+            public void handle(final KeyEvent keyEvent){
+                timelineIdle.stop();
+                posicionMomView1 = backgroundView1.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen
+                posicionMomView2 = backgroundView2.getX(); // Cuando pulsemos una tecla leeremos la posición actual del visor y después moveremos la imagen          
+                double limite = ((SCENE_WIDTH/2)-dinosaurView1.getFitWidth());//Límite a donde llega el dinosaurio y comienza scroll
+
+                //System.out.println("contPasos: "+contPasos);
+
+                switch(keyEvent.getCode()){//Según la tecla pulsada
+                    case LEFT:// el dinosaurio se moverá a la izquierda
+                        if (direction == 1){
+                            dinosaurView1.setX(dinosaurView1.getX()-dinoDeSobra);
+                            direction = -1; //pantalla a la izquierda
+                        }
+                        i = 11;//cambair contador imagen IDLE izquierda
+                        if (dinosaurView1.getX()>(dinoDeSobra*-1)){// para que no pase del lado izquierdo (como la imagen es larga tiene que salir un poco por la izquierda
+                            if (contPasos>=(7*3)){
+                                contPasos=0;
+                            }else{
+                                contPasos++;                               
+                            }
+                            dinosaurView1.setX ((dinosaurView1.getX())-8);
+                            dinosaurView1.setImage(dinosaurRi[(contPasos/3)]);
+                        }
+                        break;
+
+                    case RIGHT: //el fondo se moverá a la izquierda
+                        if (direction == -1){
+                            dinosaurView1.setX(dinosaurView1.getX()+dinoDeSobra);
+                            direction = 1; //pantalla a la izquierda
+                        }
+                        
+                        direction = 1;//pantalla a la derecha
+                         i = 1;//cambiar contador imagen IDLE
+                        posicionMomView1 = posicionMomView1-8;
+                        posicionMomView2 = posicionMomView2-8;
+                        if (dinosaurView1.getX()>limite){
+                            if (posicionMomView2>0){
+                                backgroundView1.setX (posicionMomView1);
+                                backgroundView2.setX (posicionMomView2);
+                            }else{
+                                backgroundView1.setX (0);
+                                backgroundView2.setX (SCENE_WIDTH);                                
+                            }
+                            if (contPasos>=(7*3)){
+                                contPasos=0;
+                            }else{
+                                contPasos++;                               
+                            }
+                            dinosaurView1.setImage(dinosaurRd[(contPasos/3)]);                            
+                        }else{
+                            if (contPasos>=(7*3)){
+                                contPasos=0;
+                            }else{
+                                contPasos++;                               
+                            }
+                            dinosaurView1.setX ((dinosaurView1.getX())+8);
+                            dinosaurView1.setImage(dinosaurRd[(contPasos/3)]);
+                        }
+                        break;
+
+                    case UP:
+                        contJump=0;//para que pueda mostrar los dinosaurios en timeline                   
+                        //TIMELINE -JUMP
+                        // Game loop usando Timeline
+                        Timeline timelineJump = new Timeline(//Sirve para lo que lo que metamos aquí. Podemos utilizar varios TimeLine con diferentes velocidades para diferentes cosas
+                            // 0.017 ~= 60 FPS (equivalencia de segundos a Frames por Segundo)
+                            new KeyFrame(Duration.seconds(0.08), new EventHandler<ActionEvent>() {
+                                public void handle(ActionEvent ae) {//Sólo puede haber un handle en el timeline
+
+                                    
+                                //HACER SALTO
+                                    System.out.println("contJump: " +contJump);
+                                    System.out.println("dinosarioY: " +dinosaurioY);
+
+                                    
+                                    if (contJump<15){
+                                        if (direction==-1){//salto a la izq
+                                            dinosaurView1.setImage(dinosaurJi[contJump]);
+                                            dinosaurView1.setX((dinosaurView1.getX()-30));
+                                            if (dinosaurView1.getY() > (alturaJump-dinosaurioY)){//dinosaurView1.getY()
+                                                dinosaurView1.setY((dinosaurView1.getY()-30));                                    
+                                            }else{
+                                                dinosaurView1.setY((dinosaurView1.getY()+30));                                      
+                                            }
+                                        }else{//salto a la der
+                                            dinosaurView1.setImage(dinosaurJd[contJump]);
+                                            dinosaurView1.setX((dinosaurView1.getX()+30));
+                                            if (dinosaurView1.getY() > (alturaJump-dinosaurioY)){//dinosaurView1.getY()
+                                                dinosaurView1.setY((dinosaurView1.getY()-30));                                    
+                                            }else{
+                                                dinosaurView1.setY((dinosaurView1.getY()+30));                                      
+                                            }                                
+                                        }
+                                    }
+                                    contJump++; 
+                                }
+                            })
+                        );
+
+                        timelineJump.setCycleCount(15);//Llama al método setCycleCount (para que la animación siga indefinidamente)
+                        timelineJump.play(); //Llama al método Play para echar a andar la animación
+                        //direction = 0;//pantalla parada                     
+                        break;
+
+                }
+
+            }
+        }); 
+        
+        
+        scene.setOnKeyReleased(new EventHandler<KeyEvent>(){//Llama al método setOnKeyPressed. Cuando detecte que se pulsa una tecla en la escena (se puede hacer que en vez que en la escena se detecte cuando pulse dentro de un campo de texto)
+            public void handle(final KeyEvent keyEvent){
+                timelineIdle.play(); //Llama al método Play para echar a andar la animación
+            }          
+        });
         
     }
 
