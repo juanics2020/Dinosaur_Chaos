@@ -229,10 +229,28 @@ public class App extends Application {
     Timeline timelineShoot;
     Timeline timelinePlaying;
     TextInputDialog dialog = new TextInputDialog("Nombre");
-
-
- 
-
+    String varTextButton ="";
+    ImageView backgroundView1;
+    ImageView backgroundView2;
+    Group groupD;
+    Circle circleBall;
+    Group groupM;
+    Group groupMiz;
+    ImageView heartView1;
+    ImageView heartView2;
+    ImageView heartView3;
+    ImageView heartView4;
+    ImageView heartView5;
+    ImageView heartView6;
+    ImageView heartView7;
+    ImageView heartView8;
+    ImageView heartView9;
+    ImageView heartView10;
+    HBox paneScores;
+    VBox paneContinuar;
+    HBox paneGeneralName;
+    
+    
     
     @Override
     public void start(Stage stage) {
@@ -275,9 +293,10 @@ public class App extends Application {
         stage.setTitle("DINOSAUR CHAOS");
         stage.show();
         
+        
         //PONER EL FONDO 1
         Image background1 = new Image(getClass().getResourceAsStream("/images/swamp.png"));//Él lo ha llamado image1
-        ImageView backgroundView1 = new ImageView(background1);//Metemos la imagen de fondo en el visor
+        backgroundView1 = new ImageView(background1);//Metemos la imagen de fondo en el visor
                 
         backgroundView1.setX(0);//donde vamos a colocar la imagen
         backgroundView1.setY(0);
@@ -287,7 +306,7 @@ public class App extends Application {
         
         //PONER EL FONDO 2
         //Image background2 = new Image(getClass().getResourceAsStream("/images/swamp.png"));//Él lo ha llamado image1       
-        ImageView backgroundView2 = new ImageView(background1);//Metemos la imagen de fondo en el visor
+        backgroundView2 = new ImageView(background1);//Metemos la imagen de fondo en el visor
                 
         backgroundView2.setX(SCENE_WIDTH);//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         backgroundView2.setY(0);
@@ -300,7 +319,7 @@ public class App extends Application {
         
         //PONER EL DINOSAURIO
         //GRUPO IMAGEN DINOSAURIO + RECTANGULO
-        Group groupD = new Group();
+        groupD = new Group();
         // El dinosaurio mide 170 pixeles (ancho) x 118 pixeles (alto)
         dinosaurView1.setX(0);//posición x del dinosaurio
         dinosaurView1.setY(0);//posición y del dinosaurio
@@ -324,7 +343,7 @@ public class App extends Application {
         
         //PONER LA BOLA QUE TIRA EL DINOSAURIO
         //new Circle() => Crear un objeto de la clase Circle
-        Circle circleBall = new Circle(); //Creamos una variable llamada circleBall(nuevo objeto -> new) de tipo Círculo(clase Círculo)
+        circleBall = new Circle(); //Creamos una variable llamada circleBall(nuevo objeto -> new) de tipo Círculo(clase Círculo)
         //Llamamos a MÉTODOS del objeto circleBall
         circleBall.setCenterX(-300);
         circleBall.setCenterY(60);
@@ -336,7 +355,7 @@ public class App extends Application {
  
         
         //AÑADIR GRUPO DE FORMAS PARA HACER ENEMIGO
-        Group groupM = new Group();
+        groupM = new Group();
         //RECTÁGULO
         Rectangle rectM= new Rectangle();
         //Métodos del objeto RECTÁNGULO
@@ -388,7 +407,7 @@ public class App extends Application {
         
         
         //AÑADIR GRUPO DE FORMAS PARA HACER ENEMIGO A LA IZQUIERDA
-        Group groupMiz = new Group();
+        groupMiz = new Group();
         //RECTÁGULO
         Rectangle rectMiz= new Rectangle();
         //Métodos del objeto RECTÁNGULO
@@ -440,43 +459,43 @@ public class App extends Application {
         
         //PONER LOS CORAZONES
         //*********************
-        ImageView heartView1 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView1 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView1.setX(SCENE_WIDTH-(SCENE_WIDTH/3));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView1.setY(40);       
         
-        ImageView heartView2 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView2 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView2.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-31));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView2.setY(40); 
         
-        ImageView heartView3 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView3 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView3.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView3.setY(40); 
         
-        ImageView heartView4 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView4 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView4.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView4.setY(40); 
         
-        ImageView heartView5 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView5 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView5.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView5.setY(40);        
 
-        ImageView heartView6 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView6 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView6.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView6.setY(40); 
         
-        ImageView heartView7 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView7 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView7.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31+31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView7.setY(40); 
         
-        ImageView heartView8 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView8 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView8.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31+31+31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView8.setY(40); 
         
-        ImageView heartView9 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView9 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView9.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31+31+31+31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView9.setY(40);        
 
-        ImageView heartView10 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
+        heartView10 = new ImageView (heartImage); // El corazón mide 31 * 31 pixeles
         heartView10.setX(SCENE_WIDTH-((SCENE_WIDTH/3)-(31+31+31+31+31+31+31+31+31)));//donde vamos a colocar la imagen A CONTINUACION DE LA PRIMERA
         heartView10.setY(40);              
         
@@ -495,7 +514,7 @@ public class App extends Application {
         /////LAYOUTS PARA MOSTRAR PUNTUACIONES/////
         //*****************************************
         //Layout principal
-        HBox paneScores = new HBox();
+        paneScores = new HBox();
         paneScores.setTranslateY(40);
         paneScores.setMinWidth(SCENE_WIDTH);
         paneScores.setAlignment(Pos.CENTER);
@@ -514,7 +533,7 @@ public class App extends Application {
         
         
         //Layout principal PARA NOMBRE
-        HBox paneGeneralName = new HBox();
+        paneGeneralName = new HBox();
         paneGeneralName.setTranslateY(80);
         paneGeneralName.setTranslateX(-48);
         paneGeneralName.setMinWidth(SCENE_WIDTH);
@@ -565,7 +584,7 @@ public class App extends Application {
         
         //Layout principal para VBOX (MENSAJE CONTINUAR)
         //**********************
-        VBox paneContinuar = new VBox();
+        paneContinuar = new VBox();
         paneContinuar.setTranslateY(100);
         paneContinuar.setMinWidth(SCENE_WIDTH);
         paneContinuar.setAlignment(Pos.CENTER);
@@ -596,6 +615,8 @@ public class App extends Application {
         //paneBotones.getChildren().add(botonNO);
         paneBotones.getChildren().add(buttonBar);
         paneContinuar.getChildren().add(paneBotones);
+        paneContinuar.setVisible(false);
+        
         
         
         
@@ -802,6 +823,19 @@ public class App extends Application {
                     if (deadPasos==8){
                         System.out.println("CONTINUAR");
                         //Mostrar VBox
+                        panelInvisible();
+                        botonYes.setOnAction((ActionEvent e) -> {//SI PULSAMOS EL BOTÓN SÍ
+                            continuar();
+                            panelVisible();//muetro el panel principal
+                            textHealth.setText(String.valueOf(health));
+                            textScore.setText(String.valueOf(score));
+                            timelineDead.stop();
+                            timelineIdle.play();
+                            timelinePlaying.play();
+                        });
+                        botonNO.setOnAction((ActionEvent e) -> {
+                            terminar();
+                        });
                     }
                     
                 }
@@ -1080,11 +1114,74 @@ public class App extends Application {
                 }
             }          
         });
-    
-
     }
     
+    private void panelInvisible(){
+        backgroundView1.setVisible(false);
+        backgroundView2.setVisible(false);
+        paneContinuar.setVisible(true);
+        paneScores.setVisible(false);
+        groupD.setVisible(false);
+        groupM.setVisible(false);
+        groupMiz.setVisible(false);
+        circleBall.setVisible(false);
+        heartView1.setVisible(false);
+        heartView2.setVisible(false);
+        heartView3.setVisible(false);
+        heartView4.setVisible(false);
+        heartView5.setVisible(false);
+        heartView6.setVisible(false);
+        heartView7.setVisible(false);
+        heartView8.setVisible(false);
+        heartView9.setVisible(false);
+        heartView10.setVisible(false);
+        paneGeneralName.setVisible(false);
+    }
+    
+    private void panelVisible(){
+        backgroundView1.setVisible(true);
+        backgroundView2.setVisible(true);
+        paneContinuar.setVisible(false);
+        paneScores.setVisible(true);
+        groupD.setVisible(true);
+        groupM.setVisible(true);
+        groupMiz.setVisible(true);
+        circleBall.setVisible(true);
+        heartView1.setVisible(true);
+        heartView2.setVisible(true);
+        heartView3.setVisible(true);
+        heartView4.setVisible(true);
+        heartView5.setVisible(true);
+        heartView6.setVisible(true);
+        heartView7.setVisible(true);
+        heartView8.setVisible(true);
+        heartView9.setVisible(true);
+        heartView10.setVisible(true);
+        paneGeneralName.setVisible(true);
+    }
+    
+    private void continuar(){
+        health = 2000;
+        score = 0;
+        heartView1.setImage(heartImage);
+        heartView2.setImage(heartImage);
+        heartView3.setImage(heartImage);
+        heartView4.setImage(heartImage);
+        heartView5.setImage(heartImage);
+        heartView6.setImage(heartImage);
+        heartView7.setImage(heartImage);
+        heartView8.setImage(heartImage);
+        heartView9.setImage(heartImage);
+        heartView10.setImage(heartImage);
+        dinosaurView1.setImage(dinosaur1);
+        groupD.setLayoutX(limite);
+        groupD.setLayoutY(dinosaurioY);
+        groupD.setLayoutX(limite);
+    }
   
+    private void terminar(){
+        System.exit(0);
+    }
     
     public static void main(String[] args) {
         launch();
