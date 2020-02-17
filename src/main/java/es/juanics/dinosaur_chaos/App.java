@@ -1663,25 +1663,27 @@ public class App extends Application {
 
     private void dañoDino(){
         //DETECTA EL DAÑO                   
-        if (health == 1800) {
+        if (health >= 1800 && health < 2000) {
             heartView10.setImage(heartBlack);
-        } else if (health == 1600) {
+        } else if (health >= 1600 && health < 1800) {
             heartView9.setImage(heartBlack);
-        } else if (health == 1400) {
+        } else if (health >= 1400 && health < 1600) {
             heartView8.setImage(heartBlack);
-        } else if (health == 1200) {
+        } else if (health >= 1200 && health < 1400) {
             heartView7.setImage(heartBlack);
-        } else if (health == 1000) {
+        } else if (health >= 1000 && health < 1200) {
             heartView6.setImage(heartBlack);
-        } else if (health == 800) {
+        } else if (health >= 800 && health < 1000) {
             heartView5.setImage(heartBlack);
-        } else if (health == 600) {
+        } else if (health >= 600 && health < 800) {
             heartView4.setImage(heartBlack);
-        } else if (health == 400) {
+        } else if (health >= 400 && health < 600) {
             heartView3.setImage(heartBlack);
-        } else if (health == 200) {
+        } else if (health >= 200 && health < 400) {
             heartView2.setImage(heartBlack);
-        } else if (health == 0) {//SI MUERE***********
+        } else if (health >= 1 && health < 200 ) {
+            heartView2.setImage(heartBlack);
+        } else if (health <= 0) {//SI MUERE***********
             vivo = false;
             heartView1.setImage(heartBlack);
             deadPasos = 1;
